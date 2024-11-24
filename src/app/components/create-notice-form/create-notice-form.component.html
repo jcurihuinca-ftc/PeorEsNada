@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear Aviso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="noticeForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input formControlName="title"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="noticeForm.get('title')?.invalid && noticeForm.get('title')?.touched">
+      <p>El título debe tener al menos 5 caracteres.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-text color="danger" *ngIf="noticeForm.get('description')?.invalid && noticeForm.get('description')?.touched">
+      <p>La descripción debe tener al menos 20 caracteres.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label>Fotografía</ion-label>
+      <ion-button expand="block" (click)="takePhoto()">Tomar Foto</ion-button>
+    </ion-item>
+    <img *ngIf="photo" [src]="photo" style="width: 100%; margin-top: 10px;" />
+
+    <ion-button expand="block" type="submit" [disabled]="noticeForm.invalid">Guardar Aviso</ion-button>
+  </form>
+</ion-content>

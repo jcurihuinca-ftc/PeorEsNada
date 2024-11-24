@@ -1,0 +1,40 @@
+ion-thumbnail img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+ion-thumbnail img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  ion-thumbnail {
+    margin-right: 10px;
+  }
+  
+  .create-notice-btn {
+    background-color: #3880ff;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0 16px;
+    height: 40px;
+  
+    ion-ripple-effect {
+      /* Efecto de onda */
+      color: rgba(255, 255, 255, 0.3);
+    }
+  
+    &:hover {
+      background-color: #3171e0;
+    }
+  
+    &:active {
+      background-color: #2658b7;
+    }
+  }
+  
